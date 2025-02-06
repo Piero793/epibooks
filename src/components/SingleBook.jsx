@@ -19,7 +19,7 @@ class SingleBook extends Component {
             <Card.Title style={{ color: "black" }}>{this.props.book.title}</Card.Title>
           </Card.Body>
         </Card>
-        {this.state.selected && <CommentArea bookId={this.props.book.id} />}
+        {this.state.selected && <CommentArea bookId={this.props.book.asin} />}
       </>
     );
   }

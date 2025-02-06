@@ -16,13 +16,13 @@ class AddComment extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const newComment = { comment: this.state.text, rate: this.state.rating, elementId: this.props.bookId };
+    const newComment = { comment: this.state.text, rate: this.state.rating, elementId: this.props.book.asin };
     await fetch(`https://striveschool-api.herokuapp.com/api/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E0ZDE2NGNhMDcwNDAwMTU4YmY5NjQiLCJpYXQiOjE3Mzg4NTQ3NTYsImV4cCI6MTc0MDA2NDM1Nn0.CZpzoaBhkkBk5txI8TG_8wyQ-llqihYogOXVy1fkg4A",
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2E0ZDE2NGNhMDcwNDAwMTU4YmY5NjQiLCJpYXQiOjE3Mzg4NTQ3NTYsImV4cCI6MTc0MDA2NDM1Nn0.CZpzoaBhkkBk5txI8TG_8wyQ-llqihYogOXVy1fkg4A",
       },
       body: JSON.stringify(newComment),
     });
